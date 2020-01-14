@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['submit'])) {
- $emailAddress = 'sadhanashree.mca@gmail.com';
+ $emailAddress = 'eustacia.velu@gmail.com';
  require "class.phpmailer.php";
 $msg = 'First Name:'.$_POST['name'].'<br /> Qualification:'.$_POST['qualification'].'<br /> Email:'.$_POST['email'].'<br /> Position:'.$_POST['position'].'<br /> Mobile:'.
 $_POST['phone'].'<br /> Experience:'.$_POST['exp'];
