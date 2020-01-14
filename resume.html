@@ -1,3 +1,24 @@
+
+<?php 
+if(isset($_POST['submit'])){
+    $to = "eustacia.velu@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $name = $_POST['name'];
+    $position = $_POST['position'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message =  $name . "  "." wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
+?>
+
 <!DOCTYPE html>
 <html class="no-js">
 
@@ -212,7 +233,9 @@
             <div class="col-md-12">
               <div class="col-md-12 contact">
                 <h3><font size="+3"><span>Submit Your</span> Resume</font></h3>
-                <form action="career.php" method="post" name="career" id="career" enctype="multipart/form-data">
+
+                <form action="" method="post" name="career" id="career"  enctype="multipart/form-data">
+
                   <div class="clearfix"></div>
                   <div class="col-md-4 form-group "> Your Name: </div>
                   <div class="col-md-6 form-group ">
@@ -247,7 +270,9 @@
                     <input type="text" name="capt_name" id="capt_name" size="35" class="required form-control" />
                   </div>
                   <div class="col-md-2 form-group "> <img src="CaptchaSecurityImagesd218.jpg?width=100&amp;height=40&amp;characters=5" /> </div> -->
-                  <input type="submit" name="submit1" value="SUBMIT" class="buton b_inherit buton-2 buton-mini">
+
+                  <input type="submit" name="submit" value="SUBMIT" class="buton b_inherit buton-2 buton-mini">
+
                 </form>
               </div>
 			    <p align="justify">Or Mail your resume to: <span>jobs@Eustacia Technologies.com </span> </p>
